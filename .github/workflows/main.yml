@@ -1,4 +1,4 @@
-name: BLMVC
+name: CI
 
 on:
   push:
