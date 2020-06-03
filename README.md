@@ -7,3 +7,5 @@ It demonstrates the following:
 * Migrations using Entity Framework to a SQL Server instance
 * C.R.U.D operations from the application to the database
 * Use of a Third-party DataTable display 
+
+Currently working on using Heroku for deployment.
