@@ -37,8 +37,10 @@ namespace BookListMVC
                 );
             }
             else {
-
+                
                 // Get Environment variable from Heroku
+                // Example Heroku PostgreSQL URL below
+                //string _pgConnString = "postgres://zjqjovbyk:b3f6e10aa4fe6c06a7b595e7a38e802c02da934f482d43b17dab1d@ec2-52-72.compute-1.amazonaws.com:5432/dft2vrp6ot7ef";
                 string _pgConnString = Environment.GetEnvironmentVariable("DATABASE_URL");
                 _pgConnString.Replace("//", "");
 

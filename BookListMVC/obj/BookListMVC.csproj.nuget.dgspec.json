@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/wmc-home/Repositories/github/BookListMVC/BookListMVC/BookListMVC.csproj": {}
+    "C:\\Users\\wesle\\Repositories\\BookListMVC\\BookListMVC\\BookListMVC.csproj": {}
   },
   "projects": {
-    "/Users/wmc-home/Repositories/github/BookListMVC/BookListMVC/BookListMVC.csproj": {
+    "C:\\Users\\wesle\\Repositories\\BookListMVC\\BookListMVC\\BookListMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/wmc-home/Repositories/github/BookListMVC/BookListMVC/BookListMVC.csproj",
+        "projectUniqueName": "C:\\Users\\wesle\\Repositories\\BookListMVC\\BookListMVC\\BookListMVC.csproj",
         "projectName": "BookListMVC",
-        "projectPath": "/Users/wmc-home/Repositories/github/BookListMVC/BookListMVC/BookListMVC.csproj",
-        "packagesPath": "/Users/wmc-home/.nuget/packages/",
-        "outputPath": "/Users/wmc-home/Repositories/github/BookListMVC/BookListMVC/obj/",
+        "projectPath": "C:\\Users\\wesle\\Repositories\\BookListMVC\\BookListMVC\\BookListMVC.csproj",
+        "packagesPath": "C:\\Users\\wesle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wesle\\Repositories\\BookListMVC\\BookListMVC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/wmc-home/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\wesle\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -65,10 +62,6 @@
               "target": "Package",
               "version": "[3.1.3, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools.DotNet": {
-              "target": "Package",
-              "version": "[3.1.3, )"
-            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.1, )"
@@ -100,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

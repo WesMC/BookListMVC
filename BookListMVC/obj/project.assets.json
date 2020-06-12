@@ -8425,30 +8425,25 @@
       "Microsoft.EntityFrameworkCore.Relational >= 3.1.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.3",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.3",
-      "Microsoft.EntityFrameworkCore.Tools.DotNet >= 3.1.3",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.1",
       "Npgsql >= 4.1.3.1",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 3.1.3"
     ]
   },
   "packageFolders": {
-    "/Users/wmc-home/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\wesle\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/wmc-home/Repositories/github/BookListMVC/BookListMVC/BookListMVC.csproj",
+      "projectUniqueName": "C:\\Users\\wesle\\Repositories\\BookListMVC\\BookListMVC\\BookListMVC.csproj",
       "projectName": "BookListMVC",
-      "projectPath": "/Users/wmc-home/Repositories/github/BookListMVC/BookListMVC/BookListMVC.csproj",
-      "packagesPath": "/Users/wmc-home/.nuget/packages/",
-      "outputPath": "/Users/wmc-home/Repositories/github/BookListMVC/BookListMVC/obj/",
+      "projectPath": "C:\\Users\\wesle\\Repositories\\BookListMVC\\BookListMVC\\BookListMVC.csproj",
+      "packagesPath": "C:\\Users\\wesle\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wesle\\Repositories\\BookListMVC\\BookListMVC\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/wmc-home/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\wesle\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8496,10 +8491,6 @@
             "target": "Package",
             "version": "[3.1.3, )"
           },
-          "Microsoft.EntityFrameworkCore.Tools.DotNet": {
-            "target": "Package",
-            "version": "[3.1.3, )"
-          },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.1, )"
@@ -8531,19 +8522,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1102",
-      "level": "Error",
-      "message": "Unable to find package Microsoft.EntityFrameworkCore.Tools.DotNet with version (>= 3.1.3)\n  - Found 21 version(s) in nuget.org [ Nearest version: 2.1.0-preview1-final ]",
-      "libraryId": "Microsoft.EntityFrameworkCore.Tools.DotNet",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }
