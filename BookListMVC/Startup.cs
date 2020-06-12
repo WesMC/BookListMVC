@@ -16,20 +16,22 @@ namespace BookListMVC
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+            _env = env;
         }
 
         public IConfiguration Configuration { get; }
+        public IWebHostEnvironment _env { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services, IWebHostEnvironment env)
+        public void ConfigureServices(IServiceCollection services)
         {
-            Console.WriteLine("Using Development: " + env.IsDevelopment());
+            Console.WriteLine("Using Development: " + _env.IsDevelopment());
 
             /** Use PostgreSQL for heroku deployment, otherwise use local SQL Server instance */
-            if (env.IsDevelopment()) {
+            if (_env.IsDevelopment()) {
                 services.AddDbContext<ApplicationDBContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
                 );
@@ -50,7 +52,7 @@ namespace BookListMVC
                 ";port=" + connStringArr[4] + 
                 ";database=" + connStringArr[5] +
                 ";uid=" + connStringArr[1] + 
-                ";pwd=" + connStringArr[2] + "TrustServerCertificate=true";
+                ";pwd=" + connStringArr[2] + ";sslmode=Require;TrustServerCertificate=true";
 
 
                 services.AddDbContext<ApplicationDBContext>(

@@ -10,9 +10,10 @@ namespace BookListMVC.Models
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {
-                
+            
         }
 
         public DbSet<Book> Books { get; set; }
+        
     }
 }
