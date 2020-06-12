@@ -344,3 +344,7 @@ appsettings.local.json
 
 # Visual Studio Code Dir and Files
 .vscode/
+
+# Binary and Obj directory that gets rebuilt
+bin/
+obj/
