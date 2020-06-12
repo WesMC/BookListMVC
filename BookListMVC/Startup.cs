@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Abstractions;
-using Microsoft.EntityFrameworkCore.Relational;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,10 +26,10 @@ namespace BookListMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services, IWebHostEnvironment env)
         {
-            Console.WriteLine("Using Development: " + env.IsDevelopment);
+            Console.WriteLine("Using Development: " + env.IsDevelopment());
 
             /** Use PostgreSQL for heroku deployment, otherwise use local SQL Server instance */
-            if (env.IsDevelopment) {
+            if (env.IsDevelopment()) {
                 services.AddDbContext<ApplicationDBContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
                 );
@@ -42,12 +40,12 @@ namespace BookListMVC
                 string _pgConnString = Environment.GetEnvironmentVariable("DATABASE_URL");
                 _pgConnString.Replace("//", "");
 
-                char[] delimiters = {":", "/", "@", "?"};
+                char[] delimiters = {':', '/', '@', '?'};
                 string[] connStringArr = _pgConnString.Split(delimiters);
 
                 connStringArr = connStringArr.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
-                _pgBuiltConnStr = 
+                string _pgBuiltConnStr = 
                 "host=" + connStringArr[3] +
                 ";port=" + connStringArr[4] + 
                 ";database=" + connStringArr[5] +
