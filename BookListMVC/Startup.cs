@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Abstractions;
+using Microsoft.EntityFrameworkCore.Relational;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,11 +26,40 @@ namespace BookListMVC
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services, IWebHostEnvironment env)
         {
-            services.AddDbContext<ApplicationDBContext>(
+            Console.WriteLine("Using Development: " + env.IsDevelopment);
+
+            /** Use PostgreSQL for heroku deployment, otherwise use local SQL Server instance */
+            if (env.IsDevelopment) {
+                services.AddDbContext<ApplicationDBContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
                 );
+            }
+            else {
+
+                // Get Environment variable from Heroku
+                string _pgConnString = Environment.GetEnvironmentVariable("DATABASE_URL");
+                _pgConnString.Replace("//", "");
+
+                char[] delimiters = {":", "/", "@", "?"};
+                string[] connStringArr = _pgConnString.Split(delimiters);
+
+                connStringArr = connStringArr.Where(x => !string.IsNullOrEmpty(x)).ToArray();
+
+                _pgBuiltConnStr = 
+                "host=" + connStringArr[3] +
+                ";port=" + connStringArr[4] + 
+                ";database=" + connStringArr[5] +
+                ";uid=" + connStringArr[1] + 
+                ";pwd=" + connStringArr[2] + "TrustServerCertificate=true";
+
+
+                services.AddDbContext<ApplicationDBContext>(
+                //options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+                options => options.UseNpgsql(_pgBuiltConnStr)
+                );
+            }
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
