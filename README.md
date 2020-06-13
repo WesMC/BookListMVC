@@ -9,3 +9,5 @@ It demonstrates the following:
 * Migrations using Entity Framework to a SQL Server / PostgreSQL instance
 * C.R.U.D operations from the application to the database
 * Use of a Third-party DataTable display 
+
+This app was created while following a class on [Udemy](https://www.udemy.com/course/introduction-to-aspnet-core-x/)
